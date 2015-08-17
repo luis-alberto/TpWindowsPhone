@@ -1,0 +1,91 @@
+﻿<PivotItem
+    x:Class="TpWinPhone.Views.ViewHistory"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TpWinPhone.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Header="Historique"
+    d:DesignHeight="480"
+    d:DesignWidth="480">
+    <PivotItem.Resources>
+        <ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
+            <VirtualizingStackPanel />
+        </ItemsPanelTemplate>
+    </PivotItem.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.05*"/>
+            <ColumnDefinition Width="0.9*"/>
+            <ColumnDefinition Width="0.05*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btn_deleleAll" Content="Tout Supprimer" FontSize="25"  
+                    HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                    Width="auto" Height="69" Grid.Row="0"
+                    Click="btn_deleteAll_Click"
+                    Background="Purple" Grid.ColumnSpan="2" Margin="24,-10,-0.167,-9"/>
+        <ListBox Background="Transparent" 
+                 BorderThickness="2" Grid.Row="1" Grid.Column="1"
+                 Width="auto" Height="auto"
+                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                 x:Name="listBoxobj" ItemsPanel="{StaticResource ItemsPanelTemplate1}"   >
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Border BorderBrush="White" BorderThickness="3"
+                                HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid HorizontalAlignment="Stretch" Width="auto">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Row="0" HorizontalAlignment="Stretch"
+                                           x:Name="txt_type" TextWrapping="Wrap" Width="auto"
+                                           FontSize="20" Foreground="White">
+                                    <Run Text="{Binding typeCrypt}"></Run>
+                                    <Run Text=" le "></Run>
+                                    <Run Text="{Binding dateTime}"></Run>
+                                </TextBlock>
+                                <TextBlock Grid.Row="1" HorizontalAlignment="Stretch"
+                                           x:Name="txt_text" TextWrapping="Wrap" Width="auto"
+                                           FontSize="20" Foreground="White">
+                                    <Run Text="Text : "></Run>
+                                    <Run Text="{Binding text}"></Run>
+                                </TextBlock>
+
+                                <TextBlock Grid.Row="2" HorizontalAlignment="Stretch"
+                                           x:Name="txt_password"  Width="auto"
+                                           TextWrapping="Wrap" Foreground="White"
+                                           FontSize="18" >
+                                    <Run Text="Mdp : "></Run>
+                                    <Run Text="{Binding password}"></Run>
+                                </TextBlock>
+                                <TextBlock Grid.Row="3" HorizontalAlignment="Stretch"
+                                           x:Name="txt_result"  TextWrapping="Wrap" 
+                                           Foreground="White" Width="auto"
+                                           FontSize="18">
+                                    <Run Text="Resultat : "></Run>
+                                    <Run Text="{Binding result}"></Run>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</PivotItem>

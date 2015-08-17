@@ -1,0 +1,32 @@
+﻿<PivotItem
+    x:Class="TpWinPhone.Views.ViewAbout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TpWinPhone.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    FontFamily="Verdana"
+    Header="...à propos"
+    d:DesignHeight="480"
+    d:DesignWidth="480">
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" FontSize="18" TextWrapping="Wrap" Margin="10" 
+                       Text="Le chiffre de Vigenère"/>
+            <TextBlock Grid.Row="1" FontSize="13" TextWrapping="Wrap" Margin="10"                
+                       Text="Le chiffre de Vigenère est un système de chiffrement polyalphabétique, c'est un chiffrement par substitution, mais une même lettre du message clair peut, suivant sa position dans celui-ci, être remplacée par des lettres différentes, contrairement à un système de chiffrement monoalphabétique comme le chiffre de César (qu'il utilise cependant comme composant). Cette méthode résiste ainsi à l'analyse de fréquences, ce qui est un avantage décisif sur les chiffrements monoalphabétiques. Cependant le chiffre de Vigenère a été cassé par le major prussien Friedrich Kasiski qui a publié sa méthode en 1863. Il n'offre plus depuis cette époque aucune sécurité."/>
+            <TextBlock Grid.Row="2" FontSize="18" TextWrapping="Wrap" Margin="10" 
+                       Text="Principe du chiffrement"/>
+            <TextBlock Grid.Row="3" FontSize="13" TextWrapping="Wrap" Margin="10" 
+                       Text="Ce chiffrement introduit la notion de clé. Une clé se présente généralement sous la forme d'un mot ou d'une phrase. Pour pouvoir chiffrer notre texte, à chaque caractère nous utilisons une lettre de la clé pour effectuer la substitution. Évidemment, plus la clé sera longue et variée et mieux le texte sera chiffré. Il faut savoir qu'il y a eu une période où des passages entiers d'œuvres littéraires étaient utilisés pour chiffrer les plus grands secrets. Les deux correspondants n'avaient plus qu'à avoir en leurs mains un exemplaire du même livre pour s'assurer de la bonne compréhension des messages."/>
+        </Grid>
+    </ScrollViewer>
+</PivotItem>
